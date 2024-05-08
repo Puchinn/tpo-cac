@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(29, 29, 29);
+  color: #fff;
+}
+
+header {
+  padding: 20px 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 1px 5px, rgba(0, 0, 0, 0.23) 0px 1px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgb(29, 29, 29);
+}
+
+header > nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 0 30px;
+}
+
+header > nav > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+header > nav > ul > li > a:hover {
+  color: #e47900;
+  transition: all 0.5s;
+}
+
+.active {
+  color: #e47900;
+}
+
+footer {
+  padding-top: 160px;
+  padding-left: 60px;
+  padding-bottom: 35px;
+  background-color: #e47900;
+  background: url(../assets/inicio/wave.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+footer > h2 {
+  font-size: 26px;
+}
+
+footer > h2 > span {
+  padding: 1px;
+  color: #e47900;
+  background-color: #fff;
+}
+
+footer > p:last-of-type {
+  margin-top: 25px;
+}
+
+footer > p > span {
+  padding: 3px;
+  background-color: rgb(0, 89, 255);
+  color: #ffe604;
+  font-style: italic;
+}
