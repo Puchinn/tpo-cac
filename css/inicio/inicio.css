@@ -1,15 +1,15 @@
 main {
-  min-height: 70vh;
+  position: relative;
 }
 
 .hero {
-  padding-top: 140px;
+  padding: 40px 15px;
   text-align: center;
 }
 
 h1 {
   color: #fff;
-  font-size: 66px;
+  font-size: 46px;
   text-shadow: 0px 0px 2px#ffffff;
   font-weight: 900;
   padding-bottom: 10px;
@@ -28,7 +28,7 @@ h1 > span {
 .flags {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 35px;
 }
 
 .flag {
@@ -55,27 +55,15 @@ h1 > span {
   font-weight: bold;
 }
 
-/* button {
-  background-color: #e47900;
-  color: #fff;
-  outline: none;
-  border: none;
-  padding: 10px 30px;
-  font-size: 20px;
-  font-weight: 900;
-  border-radius: 6px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-  display: block;
-} */
-
 .thinking_man {
   width: 200px;
   height: 400px;
   position: absolute;
   inset: 0;
-  left: 80%;
+  left: 65%;
   top: 40%;
+  display: none;
+  z-index: -10;
 }
 
 /* ANIMATIONS  */
@@ -101,5 +89,34 @@ h1 > span {
   }
   100% {
     transform: translateY(10px);
+  }
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 66px;
+  }
+  .hero {
+    padding-top: 100px;
+  }
+  .thinking_man {
+    display: block;
+  }
+}
+@media (min-width: 1000px) {
+  .thinking_man {
+    left: 75%;
+  }
+}
+@media (min-width: 1400px) {
+  main {
+    min-height: 60vh;
+  }
+  .hero {
+    padding-top: 130px;
+  }
+  .flags {
+    gap: 50px;
   }
 }

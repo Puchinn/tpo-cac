@@ -13,7 +13,7 @@
 }
 
 header {
-  padding: 20px 30px;
+  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 1px 5px, rgba(0, 0, 0, 0.23) 0px 1px 10px;
   position: sticky;
   top: 0;
@@ -24,7 +24,8 @@ header {
 header > nav > ul {
   list-style: none;
   display: flex;
-  gap: 0 30px;
+  gap: 0 15px;
+  justify-content: center;
 }
 
 header > nav > ul > li > a {
@@ -43,8 +44,8 @@ header > nav > ul > li > a:hover {
 }
 
 footer {
+  text-align: center;
   padding-top: 160px;
-  padding-left: 60px;
   padding-bottom: 35px;
   background-color: #e47900;
   background: url(../assets/inicio/wave.svg);
@@ -64,6 +65,7 @@ footer > h2 > span {
 }
 
 footer > p:last-of-type {
+  text-wrap: balance;
   margin-top: 25px;
 }
 
@@ -72,4 +74,11 @@ footer > p > span {
   background-color: rgb(0, 89, 255);
   color: #ffe604;
   font-style: italic;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 440px) {
+  header > nav > ul {
+    gap: 30px;
+  }
 }
