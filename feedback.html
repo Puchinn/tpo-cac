@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,4 +53,66 @@
     <p>Curso Full Stack Node.js en <span> < Codo a Codo /></span></p>
   </footer>
 </body>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/feedback/feedback.css" />
+    <link rel="stylesheet" href="css/inicio/button.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><i class="las la-home"></i> <a href="index.html">Inicio</a></li>
+          <li><i class="las la-play"></i> <a href="jugar.html">Jugar</a></li>
+          <li><i class="las la-user"></i><a href="acerca.html">Acerca</a></li>
+          <li class="active">
+            <i class="las la-undo"></i><a href="feedback.html">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="feedback">
+        <h2>Envíanos tu <span>Feedback</span></h2>
+        <form method="post" onsubmit="return validarFormulario(event)">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+          <button class="btn-53" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Country <span>Quizz</span></h2>
+      <p>Trabajo práctico del grupo 8 comisión 24255.</p>
+      <p>
+        Curso Full Stack Node.js en <span> &lt; Codo a Codo &sol;&gt;</span>
+      </p>
+    </footer>
+    <script src="js/feedback.js"></script>
+  </body>
+>>>>>>> 04834598452724e1b620e03cb0dcf091d52539e0
 </html>

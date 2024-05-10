@@ -31,8 +31,9 @@ Trabajo práctico obligatorio de codo a codo, desarrollo de página web con HTML
 - ✅ Fuente externa (Google Fonts: Poppins).
 - ✅ Animaciones, transiciones, transformación (Página Início).
 - ✅ Página totalmente responsive con 3 puntos de corte (Página Início).
-- ⏳ Formulario con validación (Pendiente).
-- ⏳ iframe, icons (Pendiente)
-- ⏳ Solicitud a una API (Pendiente)
-- ⏳ 1/4 páginas o secciones HTML (Pendiente)
-- ⏳ Pasar la validación de W3.
+- ✅ Formulario con validación (Página Feedback).
+- ✅ Iconos (Nav)
+- ✅ Solicitud a una API (Página Jugar)
+- ✅ API: https://restcountries.com/
+- ✅ 4 páginas o secciones HTML
+- ✅ Pasar la validación de W3 (Todas las paginas)

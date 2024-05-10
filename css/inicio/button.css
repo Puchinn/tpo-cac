@@ -18,7 +18,11 @@
   font-family: "Poppins";
   font-size: 27px;
   border: 1px solid;
+<<<<<<< HEAD
   width: 20%;
+=======
+  width: 200px;
+>>>>>>> 04834598452724e1b620e03cb0dcf091d52539e0
 }
 
 .btn-53:disabled {

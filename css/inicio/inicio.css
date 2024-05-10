@@ -1,5 +1,5 @@
 main {
-  position: relative;
+  min-height: 70vh;
 }
 
 .hero {
@@ -110,9 +110,6 @@ h1 > span {
   }
 }
 @media (min-width: 1400px) {
-  main {
-    min-height: 60vh;
-  }
   .hero {
     padding-top: 130px;
   }
