@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="css/inicio/feedback.css" /> 
   <link rel="stylesheet" href="css/inicio/button.css" />
+  <script src="js/feedback.js"></script>
 </head>
 <body>
   <header>
@@ -23,22 +24,22 @@
   <main>
     <section class="feedback">
       <h2>Envíanos tu Feedback</h2>
-      <form action="#" method="post">
+      <form method="post" onsubmit="return validarFormulario(event)">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
+          <input type="text" id="nombre" name="nombre">
         </div>
         <div class="form-group">
           <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" required>
+          <input type="text" id="apellido" name="apellido" >
         </div>
         <div class="form-group">
           <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" required>
+          <input type="email" id="correo" name="correo" >
         </div>
         <div class="form-group">
           <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <textarea id="mensaje" name="mensaje" rows="4" ></textarea>
         </div>
         <button  class="btn-53" type="submit">Enviar</button>
       </form>

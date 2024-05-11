@@ -48,18 +48,17 @@ header > nav > ul > li > a:hover {
 }
 
 footer {
+  position: fixed; /* Fija el footer en la parte inferior de la ventana */
+  left: 0; /* Alinea el footer a la izquierda */
+  bottom: 0; /* Alinea el footer en la parte inferior */
+  width: 100%; /* Ocupa todo el ancho de la ventana */
   text-align: center;
-  padding-top: 145px;
-  padding-bottom: 35px;
+  padding-top: 100px;
+  padding-bottom: 5px;
   background-color: #e47900;
-  background: url(assets/inicio/wave.svg);
+  background: url(/assets/inicio/wave.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;  
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  
 }
 
 footer > h2 {
