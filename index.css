@@ -18,7 +18,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: rgb(29, 29, 29);
+  background-color: #1d1d1dbd;
+  backdrop-filter: blur(2px);
 }
 
 header > nav > ul {
