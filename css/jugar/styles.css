@@ -21,9 +21,10 @@ main > h2 {
   padding: 50px;
   background-color: #1d1d1dc0;
   border-radius: 12px;
+  position: relative;
 }
 
-.phases {
+.levels {
   border: 1px solid #fff;
   display: flex;
   align-items: center;
@@ -31,9 +32,10 @@ main > h2 {
   padding: 10px;
   gap: 15px;
   border-radius: 12px;
+  width: 100%;
 }
 
-.phase {
+.level {
   height: 45px;
   width: 45px;
   border-radius: 50%;
@@ -41,6 +43,7 @@ main > h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s;
 }
 
 .content {
@@ -52,8 +55,17 @@ main > h2 {
   font-size: 22px;
 }
 
-.content > p:last-child {
-  font-size: 18px;
+.content > p:last-of-type {
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.active-phase {
+  background-color: #41cc00;
+}
+
+.checked {
+  background-color: #313131;
 }
 
 .options {
@@ -63,7 +75,7 @@ main > h2 {
   padding: 15px 0px;
 }
 
-.options > button {
+.option {
   max-width: 170px;
   height: 70px;
   width: 100%;
@@ -77,4 +89,40 @@ main > h2 {
   color: #fff;
   border: 1px solid #fff;
   cursor: pointer;
+}
+
+.option:hover {
+  background-color: #e47900;
+}
+
+.result {
+  position: absolute;
+  display: none;
+  inset: 0;
+  background-color: #000000f1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.result-info > p {
+  font-size: 20px;
+  padding: 15px;
+}
+
+#btnReiniciar {
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  margin: auto;
+  font-size: 19px;
+  font-family: "Poppins";
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+#btnReiniciar:hover {
+  background-color: #000;
 }
