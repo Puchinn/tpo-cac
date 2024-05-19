@@ -1,3 +1,9 @@
+body {
+  background: url(/assets/jugar/stacked-peaks-haikei2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -11,7 +17,14 @@ main > h2 {
   padding: 15px 0;
 }
 
-.phases {
+.game {
+  padding: 50px;
+  background-color: #1d1d1dc0;
+  border-radius: 12px;
+  position: relative;
+}
+
+.levels {
   border: 1px solid #fff;
   display: flex;
   align-items: center;
@@ -19,9 +32,10 @@ main > h2 {
   padding: 10px;
   gap: 15px;
   border-radius: 12px;
+  width: 100%;
 }
 
-.phase {
+.level {
   height: 45px;
   width: 45px;
   border-radius: 50%;
@@ -29,6 +43,27 @@ main > h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s;
+}
+
+.level.correct {
+  background-color: green;
+  color: white;
+}
+
+.level.incorrect {
+  background-color: red;
+  color: white;
+}
+
+.result-info .Correcto {
+  background-color: green;
+  color: white;
+}
+
+.result-info .Incorrecto {
+  background-color: red;
+  color: white;
 }
 
 .content {
@@ -40,8 +75,17 @@ main > h2 {
   font-size: 22px;
 }
 
-.content > p:last-child {
-  font-size: 18px;
+.content > p:last-of-type {
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.active-phase {
+  background-color: #41cc00;
+}
+
+.checked {
+  background-color: #313131;
 }
 
 .options {
@@ -51,9 +95,9 @@ main > h2 {
   padding: 15px 0px;
 }
 
-.options > button {
+.option {
   max-width: 170px;
-  height: 70px;
+  min-height: 70px;
   width: 100%;
   outline: none;
   border: none;
@@ -65,4 +109,49 @@ main > h2 {
   color: #fff;
   border: 1px solid #fff;
   cursor: pointer;
+  padding: 5px;
+}
+
+.option:hover {
+  background-color: #e47900;
+}
+
+.result {
+  position: absolute;
+  display: none;
+  inset: 0;
+  background-color: #000000f1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.result-info > p {
+  font-size: 20px;
+  padding: 15px;
+}
+
+#btnReiniciar {
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  margin: auto;
+  font-size: 19px;
+  font-family: "Poppins";
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+#btnReiniciar:hover {
+  background-color: #000;
+}
+img {
+  width: 220px;
+  height: auto;
+  max-height: 150px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
