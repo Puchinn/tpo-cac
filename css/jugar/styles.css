@@ -10,6 +10,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 60px 10px;
+  min-height: 80vh;
 }
 
 main > h2 {
@@ -18,7 +19,7 @@ main > h2 {
 }
 
 .game {
-  padding: 50px;
+  padding: 30px;
   background-color: #1d1d1dc0;
   border-radius: 12px;
   position: relative;
@@ -29,6 +30,7 @@ main > h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 10px;
   gap: 15px;
   border-radius: 12px;

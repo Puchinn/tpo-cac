@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="css/inicio/feedback.css" /> 
-  <link rel="stylesheet" href="css/inicio/button.css" />
-  <script src="js/feedback.js"></script>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="jugar.html">Jugar</a></li>
-        <li><a href="acerca.html">Acerca</a></li>
-        <li><a href="feedback.html" class="active">Feedback</a></li> <!-- Asegúrate de que el enlace a Feedback esté marcado como activo -->
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/feedback/feedback.css" />
+    <link rel="stylesheet" href="css/inicio/button.css" />
+    <script src="js/feedback.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="jugar.html">Jugar</a></li>
+          <li><a href="acerca.html">Acerca</a></li>
+          <li><a href="feedback.html" class="active">Feedback</a></li>
+          <!-- Asegúrate de que el enlace a Feedback esté marcado como activo -->
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="feedback">
-      <h2>Envíanos tu Feedback</h2>
-      <form method="post" onsubmit="return validarFormulario(event)">
-        <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre">
-        </div>
-        <div class="form-group">
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" >
-        </div>
-        <div class="form-group">
-          <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" >
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" ></textarea>
-        </div>
-        <button  class="btn-53" type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+    <main>
+      <section class="feedback">
+        <h2>Envíanos tu Feedback</h2>
+        <form method="post" onsubmit="return validarFormulario(event)">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+          <button class="btn-53" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
 
-  <footer>
-    <h2>Country <span>Quizz</span></h2>
-    <p>Trabajo práctico del grupo 8 comisión 24255.</p>
-    <p>Curso Full Stack Node.js en <span> < Codo a Codo /></span></p>
-  </footer>
-</body>
+    <footer>
+      <h2>Country <span>Quizz</span></h2>
+      <p>Trabajo práctico del grupo 8 comisión 24255.</p>
+      <p>Curso Full Stack Node.js en <span> < Codo a Codo /></span></p>
+    </footer>
+  </body>
 </html>

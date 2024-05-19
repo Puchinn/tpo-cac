@@ -12,10 +12,6 @@
   color: #fff;
 }
 
-body {
-  overflow: hidden; /* Evita que aparezca la barra de desplazamiento */
-}
-
 header {
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 1px 5px, rgba(0, 0, 0, 0.23) 0px 1px 10px;
@@ -49,13 +45,8 @@ header > nav > ul > li > a:hover {
 }
 
 footer {
-  position: fixed; /* Fija el footer en la parte inferior de la ventana */
-  left: 0; /* Alinea el footer a la izquierda */
-  bottom: 0; /* Alinea el footer en la parte inferior */
-  width: 100%; /* Ocupa todo el ancho de la ventana */
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 5px;
+  padding: 100px 10px 5px 10px;
   background-color: #e47900;
   background: url(assets/inicio/wave.svg);
   background-repeat: no-repeat;
