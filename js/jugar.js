@@ -15,42 +15,25 @@ const mock = (object = {}) => {
 };
 
 const frasesRandoms = [
-  "Que bandera es esta mi rey?",
-  "Y esta bandera mi loco?",
-  "a ver decime el nombre de esta banderita:",
-  "Diez pe que no le acertas el nombre:",
-  "malo si le erras a esta:",
-  "opa opa, me dicen por ahi que no sabes el nombre de esta banderita: ",
+  "¿Qué bandera es esta?",
+  "¿Y esta bandera ?",
+  "A ver, decime el nombre de esta banderita",
+  "A que esta bandera no la sabes",
+  "Seria muy malo que no conozcas esta",
+  "A ver A ver, me dicen por ahi que no sabes el nombre de esta banderita",
 ];
 
-// const data = await fetch("https://restcountries.com/v3.1/all").then((d) =>
-//   d.json()
-// );
-// const c = data.map((d) => mock(d));
-
 const paises = [
-  { name: "Moldova", capital: "Chișinău", flag: "https://flagcdn.com/md.svg" },
-  {
-    name: "United States",
-    capital: "Washington, D.C.",
-    flag: "https://flagcdn.com/us.svg",
-  },
-  { name: "Mayotte", capital: "Mamoudzou", flag: "https://flagcdn.com/yt.svg" },
-  { name: "Nauru", capital: "Yaren", flag: "https://flagcdn.com/nr.svg" },
-  { name: "Mozambique", capital: "Maputo", flag: "https://flagcdn.com/mz.svg" },
-  { name: "Brazil", capital: "Brasília", flag: "https://flagcdn.com/br.svg" },
-  { name: "Cape Verde", capital: "Praia", flag: "https://flagcdn.com/cv.svg" },
-  {
-    name: "Equatorial Guinea",
-    capital: "Malabo",
-    flag: "https://flagcdn.com/gq.svg",
-  },
-  { name: "Albania", capital: "Tirana", flag: "https://flagcdn.com/al.svg" },
-  {
-    name: "United States Virgin Islands",
-    capital: "Charlotte Amalie",
-    flag: "https://flagcdn.com/vi.svg",
-  },
+  { name: "Suecia", capital: "Estocolmo", flag: "https://flagcdn.com/se.svg" },
+  { name: "Estados Unidos", capital: "Washington, D.C.", flag: "https://flagcdn.com/us.svg" },
+  { name: "Nigeria", capital: "abuya", flag: "https://flagcdn.com/ng.svg" },
+  { name: "Ecuador", capital: "Quito", flag: "https://flagcdn.com/ec.svg" },
+  { name: "España", capital: "Madrid", flag: "https://flagcdn.com/es.svg" },
+  { name: "Brasil", capital: "Brasília", flag: "https://flagcdn.com/br.svg" },
+  { name: "Colombia", capital: "Bogotá", flag: "https://flagcdn.com/co.svg" },
+  { name: "Puerto Rico", capital: "San Juan", flag: "https://flagcdn.com/pr.svg" },
+  { name: "Rusia", capital: "Moscú", flag: "https://flagcdn.com/ru.svg" },
+  { name: "Argentina", capital: "Buenos Aires", flag: "https://flagcdn.com/ar.svg" },
 ];
 
 function numeroRandom(rango) {
@@ -100,23 +83,14 @@ function nuevoNivel(e) {
   if (valorSeleccionado === respuestaRandom) {
     if (!indicesAcertados.includes(indiceCorrecto)) {
       indicesAcertados.push(indiceCorrecto);
+      levels[nivelInicial - 1].classList.add("Correcto");
     }
+  } else {
+    levels[nivelInicial - 1].classList.add("Incorrecto");
   }
 
   if (nivelInicial === 10) {
-    resultInfo.innerHTML = `
-    <p>Banderas acertadas: ${indicesAcertados.length} / 10</p>
-    <p>Nombres de las banderas acertadas: ${
-      indicesAcertados.map((e) => paises[e].name).join(", ") || 0
-    } </p>
-    <p>Banderas erradas: ${
-      indicesMostrados
-        .filter((e) => !indicesAcertados.includes(e))
-        .map((e) => paises[e].name)
-        .join(", ") || 0
-    } </p>
-    `;
-    boxResult.style.display = "block";
+    mostrarResultados();
     return;
   }
   nivelInicial++;
@@ -137,11 +111,36 @@ function iniciarNivel() {
 
   paisesAleatorios.forEach((indice, i) => {
     options[i].innerHTML = paises[indice].name;
+    options[i].removeEventListener("click", nuevoNivel); // Remove previous event listeners
     options[i].addEventListener("click", nuevoNivel);
   });
   console.log(nivelInicial);
   levels[nivelInicial - 1].classList.toggle("active-phase");
   levels[nivelInicial - 2]?.classList.toggle("checked");
+}
+
+function mostrarResultados() {
+  const niveles = Array.from(levels).map((level, i) => {
+    const clase = level.classList.contains('Correcto') ? 'Correcto' : 'Incorrecto';
+    return `<div class="level ${clase}">${i + 1}</div>`;
+  }).join("");
+
+  const resultadoNiveles = `<div class="levels">${niveles}</div>`;
+  
+  resultInfo.innerHTML = `
+    ${resultadoNiveles}
+    <p>Banderas acertadas: ${indicesAcertados.length} / 10</p>
+    <p>Nombres de las banderas acertadas: ${
+      indicesAcertados.map((e) => paises[e].name).join(", ") || 0
+    } </p>
+    <p>Banderas erradas: ${
+      indicesMostrados
+        .filter((e) => !indicesAcertados.includes(e))
+        .map((e) => paises[e].name)
+        .join(", ") || 0
+    } </p>
+  `;
+  boxResult.style.display = "block";
 }
 
 function reiniciarJuego() {
@@ -151,7 +150,7 @@ function reiniciarJuego() {
   indiceCorrecto = 0;
   indicesMostrados = [];
   resultInfo.innerHTML = "";
-  levels.forEach((e) => e.classList.remove("checked", "active-phase"));
+  levels.forEach((e) => e.classList.remove("checked", "active-phase", "Correcto", "Incorrecto"));
   boxResult.style.display = "none";
   iniciarNivel();
 }
