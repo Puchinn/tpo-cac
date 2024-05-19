@@ -6,11 +6,15 @@ const resultInfo = document.querySelector(".result-info");
 const levels = document.querySelectorAll(".level");
 const boxResult = document.querySelector(".result");
 
+const data = await fetch("https://restcountries.com/v3.1/all").then((res) =>
+  res.json()
+);
+
 const mock = (object = {}) => {
   return {
     name: object.name.common,
     capital: object.capital ? object.capital[0] : "",
-    flag: object.flags.svg,
+    flag: object.flags.png,
   };
 };
 
@@ -23,18 +27,7 @@ const frasesRandoms = [
   "A ver A ver, me dicen por ahi que no sabes el nombre de esta banderita",
 ];
 
-const paises = [
-  { name: "Suecia", capital: "Estocolmo", flag: "https://flagcdn.com/se.svg" },
-  { name: "Estados Unidos", capital: "Washington, D.C.", flag: "https://flagcdn.com/us.svg" },
-  { name: "Nigeria", capital: "abuya", flag: "https://flagcdn.com/ng.svg" },
-  { name: "Ecuador", capital: "Quito", flag: "https://flagcdn.com/ec.svg" },
-  { name: "España", capital: "Madrid", flag: "https://flagcdn.com/es.svg" },
-  { name: "Brasil", capital: "Brasília", flag: "https://flagcdn.com/br.svg" },
-  { name: "Colombia", capital: "Bogotá", flag: "https://flagcdn.com/co.svg" },
-  { name: "Puerto Rico", capital: "San Juan", flag: "https://flagcdn.com/pr.svg" },
-  { name: "Rusia", capital: "Moscú", flag: "https://flagcdn.com/ru.svg" },
-  { name: "Argentina", capital: "Buenos Aires", flag: "https://flagcdn.com/ar.svg" },
-];
+const paises = data.map((p) => mock(p));
 
 function numeroRandom(rango) {
   return Math.trunc(Math.random() * rango);
@@ -114,19 +107,22 @@ function iniciarNivel() {
     options[i].removeEventListener("click", nuevoNivel); // Remove previous event listeners
     options[i].addEventListener("click", nuevoNivel);
   });
-  console.log(nivelInicial);
   levels[nivelInicial - 1].classList.toggle("active-phase");
   levels[nivelInicial - 2]?.classList.toggle("checked");
 }
 
 function mostrarResultados() {
-  const niveles = Array.from(levels).map((level, i) => {
-    const clase = level.classList.contains('Correcto') ? 'Correcto' : 'Incorrecto';
-    return `<div class="level ${clase}">${i + 1}</div>`;
-  }).join("");
+  const niveles = Array.from(levels)
+    .map((level, i) => {
+      const clase = level.classList.contains("Correcto")
+        ? "Correcto"
+        : "Incorrecto";
+      return `<div class="level ${clase}">${i + 1}</div>`;
+    })
+    .join("");
 
   const resultadoNiveles = `<div class="levels">${niveles}</div>`;
-  
+
   resultInfo.innerHTML = `
     ${resultadoNiveles}
     <p>Banderas acertadas: ${indicesAcertados.length} / 10</p>
@@ -150,7 +146,9 @@ function reiniciarJuego() {
   indiceCorrecto = 0;
   indicesMostrados = [];
   resultInfo.innerHTML = "";
-  levels.forEach((e) => e.classList.remove("checked", "active-phase", "Correcto", "Incorrecto"));
+  levels.forEach((e) =>
+    e.classList.remove("checked", "active-phase", "Correcto", "Incorrecto")
+  );
   boxResult.style.display = "none";
   iniciarNivel();
 }
