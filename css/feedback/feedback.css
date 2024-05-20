@@ -1,6 +1,9 @@
 main {
   margin: 0 auto;
 }
+h2 > span {
+  color: #e47900;
+}
 
 .feedback {
   padding: 30px;

@@ -25,8 +25,9 @@ header {
 header > nav > ul {
   list-style: none;
   display: flex;
-  gap: 0 15px;
+  gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 header > nav > ul > li > a {

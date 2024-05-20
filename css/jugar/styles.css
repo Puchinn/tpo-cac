@@ -1,5 +1,4 @@
 body {
-  background: url(/assets/jugar/stacked-peaks-haikei2.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -16,6 +15,10 @@ main {
 main > h2 {
   font-size: 30px;
   padding: 15px 0;
+}
+
+main > h2 > span {
+  color: #e47900;
 }
 
 .game {
