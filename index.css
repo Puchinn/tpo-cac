@@ -60,12 +60,12 @@ a:hover {
 }
 
 footer {
-  width: 100%; 
+  width: 100%;
   text-align: center;
-  padding-top: 50px; 
-  padding-bottom: 20px; 
+  padding-top: 50px;
+  padding-bottom: 20px;
   background-color: #e47900;
-  background: url(/assets/inicio/wave.svg);
+  background: url(assets/inicio/wave.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }

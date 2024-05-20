@@ -6,17 +6,7 @@ const resultInfo = document.querySelector(".result-info");
 const levels = document.querySelectorAll(".level");
 const boxResult = document.querySelector(".result");
 
-const data = await fetch("https://restcountries.com/v3.1/all").then((res) =>
-  res.json()
-);
-
-const mock = (object = {}) => {
-  return {
-    name: object.name.common,
-    capital: object.capital ? object.capital[0] : "",
-    flag: object.flags.png,
-  };
-};
+import data from "../data.json" with { type: "json" };
 
 const frasesRandoms = [
   "¿Qué bandera es esta?",
@@ -27,7 +17,7 @@ const frasesRandoms = [
   "A ver A ver, me dicen por ahi que no sabes el nombre de esta banderita",
 ];
 
-const paises = data.map((p) => mock(p));
+const paises = data
 
 function numeroRandom(rango) {
   return Math.trunc(Math.random() * rango);
