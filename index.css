@@ -35,12 +35,26 @@ header > nav > ul > li > a {
   font-size: 20px;
 }
 
-header > nav > ul > li > a:hover {
+header > nav > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+i {
+  font-size: 24px;
+}
+
+header > nav > ul > li:hover,
+a:hover {
   color: #e47900;
   transition: all 0.5s;
 }
 
-.active {
+.active > i {
+  color: #e47900;
+}
+.active > a {
   color: #e47900;
 }
 

@@ -1,27 +1,60 @@
 .about {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .about h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
-  
-  .about p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .images {
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  .images img {
-    width: 300px; /* Ancho deseado para las imágenes */
-    height: auto; /* Altura automática para mantener la proporción */
-    margin: 0 10px; /* Espacio entre las imágenes */
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+.about h2 span {
+  color: #e47900;
+}
+
+.about p {
+  font-size: 18px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+}
+
+.images img {
+  width: 300px; /* Ancho deseado para las imágenes */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin: 0 10px; /* Espacio entre las imágenes */
+}
+
+.nosotros {
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.img > img {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.card > ul {
+  list-style-type: none;
+}
+
+.card > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card > ul a {
+  color: #fff;
+}
