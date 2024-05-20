@@ -60,13 +60,10 @@ a:hover {
 }
 
 footer {
-  position: fixed; /* Fija el footer en la parte inferior de la ventana */
-  left: 0; /* Alinea el footer a la izquierda */
-  bottom: 0; /* Alinea el footer en la parte inferior */
-  width: 100%; /* Ocupa todo el ancho de la ventana */
+  width: 100%; 
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 5px;
+  padding-top: 50px; 
+  padding-bottom: 20px; 
   background-color: #e47900;
   background: url(/assets/inicio/wave.svg);
   background-repeat: no-repeat;
@@ -74,7 +71,7 @@ footer {
 }
 
 footer > h2 {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 footer > h2 > span {
@@ -99,5 +96,24 @@ footer > p > span {
 @media (min-width: 440px) {
   header > nav > ul {
     gap: 30px;
+  }
+  footer {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+
+  footer > h2 {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  footer > h2 {
+    font-size: 28px;
   }
 }
