@@ -28,31 +28,24 @@
     </header>
 
     <main>
-      <section class="feedback">
-        <h2>Envíanos tu <span>Feedback</span></h2>
-        <!-- Formulario para crear un nuevo feedback -->
-        <form id="form-crear-feedback">
-          
-            <label for="nuevo-nombre">Nombre:</label>
-            <input type="text" id="nuevo-nombre" name="nombre" required/>
-          <br>          
-            <label for="nuevo-apellido">Apellido:</label>
-            <input type="text" id="nuevo-apellido" name="apellido" required/>
-          <br>          
-            <label for="nuevo-correo">Correo electrónico:</label>
-            <input type="email" id="nuevo-correo" name="correo" required/>
-          <br>
-            <label for="nuevo-mensaje">Mensaje:</label>
-            <textarea id="nuevo-mensaje" name="mensaje" rows="4" required></textarea>
-          <br>
-          <button class="btn-53" type="submit">Enviar</button>
-        </form>
-      </section>
-
-      <!--  Tabla para mostrar feedbacks -->
-  <!-- <table>
+  <!--  Tabla para mostrar Usuarios -->
+      <table>   
+        <thead>
+            <tr>
+              <th>ID</th>
+               <th>Nombre Completo</th>
+               <th>Clave</th>           
+            </tr>
+        </thead>
+        <tbody id="body-tabla-usuarios">
+        </tbody>
+      </table>
+      
+   <!--  Tabla para mostrar feedbacks -->
+  <table>
     <thead>
         <tr>
+          <th>ID</th>
            <th>Nombre</th>
            <th>Apellido</th>
            <th>Correo</th> 
@@ -61,8 +54,38 @@
     </thead>
     <tbody id="body-tabla-feedbacks">
       </tbody>
-    </table> -->
-    </main>
+    </table>
+
+      <!--  Tabla para mostrar feedbacks -->
+  <table>
+    <thead>
+        <tr>
+           <th>ID</th>
+           <th>Nombre</th>
+           <th>Capital</th> 
+           <th>Población</th> 
+        </tr>
+    </thead>
+    <tbody id="body-tabla-paises">
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+          <tr>
+             <th>ID</th>
+             <th>Nombre Completo</th>
+             <th>Acerca</th> 
+             <th>Web Link</th> 
+          </tr>
+      </thead>
+      <tbody id="body-tabla-creadores">
+        </tbody>
+      </table>
+
+
+
+  </main>
 
     <footer>
       <h2>Country <span>Quizz</span></h2>
@@ -72,6 +95,9 @@
       </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/usuario.js"></script>
     <script src="js/feedback.js"></script>
+    <script src="js/creador.js"></script>
+    <script src="js/pais.js"></script>
   </body>
 </html>
